@@ -1,22 +1,27 @@
-*{
+* {
     margin: 0;
     padding: 0;
-}
-body{
+    box-sizing: border-box;
+  }
+  
+  body {
     background: #222;
     color: #fff;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-.crud{
+  }
+  
+  .crud {
     width: 80%;
     margin: auto;
-}
-.head{
+  }
+  
+  .head {
     text-align: center;
-    text-transform:uppercase;
+    text-transform: uppercase;
     margin: 10px 0;
-}
-input{
+  }
+  
+  input {
     width: 100%;
     height: 30px;
     outline: none;
@@ -26,32 +31,28 @@ input{
     border-radius: 4px;
     padding: 4px;
     color: #fff;
-
-}
-input:focus{
+  }
+  
+  input:focus {
     background: #000;
     transform: scale(1.1);
-}
-.price input{
+  }
+  
+  .price input {
     width: 20%;
-}
-#total{
+  }
+  
+  #total {
     background: #a00d02;
     padding: 5px 2px;
     border-radius: 4px;
-}
-#total::before{
+  }
+  
+  #total::before {
     content: 'total: ';
-}
-.submit:hover{
-    letter-spacing: 20px;
-
-}
-.submit{
-    transition: 0.9s;
-
-}
-button{
+  }
+  
+  button {
     width: 100%;
     height: 30px;
     border: none;
@@ -60,32 +61,77 @@ button{
     color: #fff;
     border-radius: 20px;
     transition: 0.5s;
-}
-button:hover{
-background: #86129b;
-letter-spacing: 1px;
-}
-.btnSearch{
+  }
+  
+  button:hover {
+    background: #86129b;
+    letter-spacing: 1px;
+  }
+  
+  /* ✅ زر create فقط */
+  .submit {
+    transition: 0.9s;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #390053;
+    color: #fff;
+    border-radius: 20px;
+    padding: 0 15px;
+  }
+  
+  .submit:hover {
+    letter-spacing: 20px;
+    background: #86129b;
+  }
+  
+  .btnSearch {
     display: flex;
     justify-content: space-between;
-
-}
-.btnSearch button {
+    gap: 10px;
+  }
+  
+  .btnSearch button {
     width: 45%;
-
-}
-#deletAll{
+  }
+  
+  #deletAll {
     margin: 20px 0;
-}
-
-table{
+  }
+  
+  table {
     width: 100%;
     text-align: center;
-    margin: 10px 0 ;
-}
-table th { 
+    margin: 10px 0;
+  }
+  
+  table th {
     text-transform: uppercase;
-}
-th,td{
+  }
+  
+  th, td {
     padding: 10px;
-}
+  }
+  
+  /* ✅ تنسيق صف الحقول (count, category, create) */
+  .inputs-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .inputs-row input,
+  .inputs-row .submit {
+    flex: 1;
+    min-width: 180px;
+  }
+  
+  /* ✅ استجابة على الموبايل */
+  @media (max-width: 600px) {
+    .inputs-row input,
+    .inputs-row .submit {
+      min-width: 100%;
+    }
+  }
+  
