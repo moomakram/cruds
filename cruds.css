@@ -2,26 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     background: #222;
     color: #fff;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  
-  .crud {
+}
+
+.crud {
     width: 80%;
     margin: auto;
-  }
-  
-  .head {
+}
+
+.head {
     text-align: center;
     text-transform: uppercase;
     margin: 10px 0;
-  }
-  
-  input {
+}
+
+input {
     width: 100%;
     height: 30px;
     outline: none;
@@ -31,28 +31,28 @@
     border-radius: 4px;
     padding: 4px;
     color: #fff;
-  }
-  
-  input:focus {
+}
+
+input:focus {
     background: #000;
     transform: scale(1.1);
-  }
-  
-  .price input {
+}
+
+.price input {
     width: 20%;
-  }
-  
-  #total {
+}
+
+#total {
     background: #a00d02;
     padding: 5px 2px;
     border-radius: 4px;
-  }
-  
-  #total::before {
+}
+
+#total::before {
     content: 'total: ';
-  }
-  
-  button {
+}
+
+button {
     width: 100%;
     height: 30px;
     border: none;
@@ -61,15 +61,15 @@
     color: #fff;
     border-radius: 20px;
     transition: 0.5s;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background: #86129b;
     letter-spacing: 1px;
-  }
-  
-  /* ✅ زر create فقط */
-  .submit {
+}
+
+/* ✅ زر create فقط */
+.submit {
     transition: 0.9s;
     height: 30px;
     border: none;
@@ -78,60 +78,87 @@
     color: #fff;
     border-radius: 20px;
     padding: 0 15px;
-  }
-  
-  .submit:hover {
+}
+
+.submit:hover {
     letter-spacing: 20px;
     background: #86129b;
-  }
-  
-  .btnSearch {
+}
+
+.btnSearch {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-  }
-  
-  .btnSearch button {
+}
+
+.btnSearch button {
     width: 45%;
-  }
-  
-  #deletAll {
+}
+
+#deletAll {
     margin: 20px 0;
-  }
-  
-  table {
+}
+
+table {
     width: 100%;
     text-align: center;
     margin: 10px 0;
-  }
-  
-  table th {
-    text-transform: uppercase;
-  }
-  
-  th, td {
+    border-collapse: collapse; /* إزالة الحواف هنا */
+}
+
+table th, table td {
     padding: 10px;
-  }
-  
-  /* ✅ تنسيق صف الحقول (count, category, create) */
-  .inputs-row {
+    /* إزالة الحدود هنا */
+}
+
+table th {
+    text-transform: uppercase;
+}
+
+/* ✅ تنسيق صف الحقول (count, category, create) */
+.inputs-row {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
-  }
-  
-  .inputs-row input,
-  .inputs-row .submit {
+}
+
+.inputs-row input,
+.inputs-row .submit {
     flex: 1;
     min-width: 180px;
-  }
-  
-  /* ✅ استجابة على الموبايل */
-  @media (max-width: 600px) {
+}
+
+/* ✅ استجابة على الموبايل */
+@media (max-width: 600px) {
     .inputs-row input,
     .inputs-row .submit {
-      min-width: 100%;
+        min-width: 100%;
     }
-  }
-  
+
+    table {
+        display: block;
+        overflow-x: auto; /* إضافة تمرير أفقي */
+        white-space: nowrap; /* منع التفاف النصوص */
+    }
+
+    table th, table td {
+        font-size: 12px; /* تقليل حجم الخط في الجداول الصغيرة */
+    }
+
+    .crud {
+        width: 95%; /* لتقليص عرض النموذج في الموبايل */
+    }
+
+    /* تقليص حجم الخط بشكل أكبر للموبايلات الصغيرة */
+    @media screen and (max-width: 480px) {
+        table th, table td {
+            font-size: 10px;
+        }
+
+        button {
+            width: 100%;
+            height: 40px;
+        }
+    }
+}
